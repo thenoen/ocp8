@@ -4,9 +4,21 @@ public class MemberInnerClass {
 
     // This is "member inner class"
     class A {}
-    static class B {}
+
+    // This is NOT "member inner class" but "static nested class"
+    static class B {
+        // String bField = instanceText; // instanceText cant be accessed without instance of MemberInnerClass
+        static String bStaticField = "bStaticField";
+    }
+
+    public static class B2 {
+        static String b2StaticField = "b2StaticField";
+    }
+
     private class C {}
+
     protected class D {}
+
     public class E {}
 
     class F {
@@ -25,6 +37,7 @@ public class MemberInnerClass {
     public class PrivateFieldUser {
 
         void printOuterPrivateField() {
+            System.out.println(new B().getClass());
             System.out.println(instanceText);
         }
     }
