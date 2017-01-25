@@ -1,9 +1,11 @@
-class OverridenMethods implements A, B {
+package chapter1.methodsOverriding;
+
+class OverridenMethods implements A1, B1 {
 
     public static void main(String[] args) {
         OverridenMethods o = new OverridenMethods();
-        A a = o;
-        B b = o;
+        A1 a = o;
+        B1 b = o;
 
         a.doStuff();
         b.doStuff();
@@ -24,7 +26,7 @@ class OverridenMethods implements A, B {
     }
 }
 
-interface A {
+interface A1 {
     default void doStuff() {
         System.out.println("A: doing stuff");
     }
@@ -34,16 +36,12 @@ interface A {
     }
 }
 
-interface B {
+interface B1 {
     default void doStuff() {
         System.out.println("B: doing stuff");
     }
 
     default void doOverride(Integer i) {
         System.out.println("wrapper method");
-    }
-
-    default void doOverride(int i) {
-        System.out.println("primitive method - B");
     }
 }

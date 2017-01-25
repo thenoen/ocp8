@@ -1,3 +1,5 @@
+package chapter1.many_classes_one_file;
+
 public class MultiClass {
 
 }
