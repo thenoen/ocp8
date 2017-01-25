@@ -1,6 +1,6 @@
 *.class
 *.log
 *.lock
-*out
 ocp8.iml
-.idea
+.idea/
+out/
