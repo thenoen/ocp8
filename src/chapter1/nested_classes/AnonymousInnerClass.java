@@ -1,10 +1,16 @@
+package chapter1.nested_classes;
+
 class AnnonymousInnerClass {
 
-    abstract class A {}
+	abstract class A {
+	}
 
-    class B {}
+	class B {
+	}
 
-    A a = new A() {};
-    B b = new B() {};
+	A a = new A() {
+	};
+	B b = new B() {
+	};
 
 }

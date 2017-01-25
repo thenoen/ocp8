@@ -1,32 +1,36 @@
+package chapter1.nested_classes;
+
 public class LocalInnerClass {
 
-    private String instanceField = "instanceField";
-    public Object getLocalInnerInstance() {
+	private String instanceField = "instanceField";
 
-        String effectivelyFinal = "effectivelyFinal";
-        String notFinal = "notFinal";
+	public Object getLocalInnerInstance() {
 
-        String beforeClassA = "beforeClassA";
+		String effectivelyFinal = "effectivelyFinal";
+		String notFinal = "notFinal";
 
-        class A {
+		String beforeClassA = "beforeClassA";
 
-            // public A() {}
+		class A {
 
-            String a = effectivelyFinal;
-            String b = notFinal;
-            String c = beforeClassA;
-            // String d = afterClassA; // not available
-        }
+			// public A() {}
 
-        abstract class B {}
+			String a = effectivelyFinal;
+			String b = notFinal;
+			String c = beforeClassA;
+			// String d = afterClassA; // not available
+		}
 
-        String afterClassA = "afterClassA";
+		abstract class B {
+		}
 
-        // not allowed by compiler: error: local variables referenced from an inner class must be final or effectively final
-        // notFinal = "change";
+		String afterClassA = "afterClassA";
 
-        A a = new A();
-        return a;
-    }
+		// not allowed by compiler: error: local variables referenced from an inner class must be final or effectively final
+		// notFinal = "change";
+
+		A a = new A();
+		return a;
+	}
 
 }
