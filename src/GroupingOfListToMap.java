@@ -1,3 +1,5 @@
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -72,6 +74,12 @@ public class GroupingOfListToMap {
 //		Future<?> f = es.submit(() -> System.out.println("hello"));
 
 		System.out.println("path: '" + Paths.get("/../a").normalize() + "'");
+
+		try {
+			Files.isSameFile(Paths.get("a/../b/c"), Paths.get("a/../b/c"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 		return;
 
